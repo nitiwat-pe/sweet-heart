@@ -13,10 +13,10 @@ const CONFIG = {
     PARTNER_NAME: "ปืยธดา ❤️",
 
     // ลิงก์รูปภาพต่างๆ (สามารถเปลี่ยนเป็นพาธไฟล์รูปภาพในเครื่องได้ เช่น "images/photo1.jpg")
-    AVATAR_IMAGE: "https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400&auto=format&fit=crop", // รูปโปรไฟล์หน้า Lock Screen
-    WELCOME_IMAGE: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop", // รูปโพลารอยด์หน้าสอง
+    AVATAR_IMAGE: "https://media.discordapp.net/attachments/1031162508230279238/1528033116743008256/IMG_9722.jpg?ex=6a5cd33c&is=6a5b81bc&hm=8ded85845360cbbcc6652a210b412c5ae2de29cce0596dfd4622a9e0319f8fbc&=&format=webp&width=642&height=856", // รูปโปรไฟล์หน้า Lock Screen
+    WELCOME_IMAGE: "https://media.discordapp.net/attachments/1031162508230279238/1528033116252278794/2026-01-13___204620_ANMP0020.jpg?ex=6a5cd33c&is=6a5b81bc&hm=8e8221d29a185a3edd62a60b5272e644d9b19f9bbe9ac746feb3a22423839890&=&format=webp&width=642&height=856", // รูปโพลารอยด์หน้าสอง
     PRE_LETTER_IMAGE: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?q=80&w=600&auto=format&fit=crop", // รูปภาพในหน้าก่อนจดหมาย
-    FINAL_IMAGE: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600&auto=format&fit=crop", // รูปโพลารอยด์หน้าสุดท้าย
+    FINAL_IMAGE: "https://media.discordapp.net/attachments/1031162508230279238/1528033115883175986/IMG_0922.jpg?ex=6a5cd33c&is=6a5b81bc&hm=68739126825b8e00702265141a001940e8986cf9145168eab4e4d324746db734&=&format=webp&width=1268&height=856", // รูปโพลารอยด์หน้าสุดท้าย
 
     // ข้อความต้อนรับ (หน้า 2)
     WELCOME_TITLE: "สุขสันต์วันครบรอบนะคนเก่ง ❤️",
