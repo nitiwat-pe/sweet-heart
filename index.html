@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise For You ❤️</title>
+    <!-- Google Fonts: Itim (Cute Handwriting) and Mitr (Modern & Clean) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&family=Mitr:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Background Elements (Hearts/Stars generated via JS/CSS) -->
+    <div class="bg-decorations" id="bg-decorations"></div>
+
+    <!-- Global Audio Control (Floats on screens after unlocking) -->
+    <div class="audio-control hidden" id="audio-control" onclick="toggleMusic()">
+        <span class="music-icon" id="music-icon">🎵</span>
+        <span class="music-text" id="music-text">เปิดเพลง</span>
+    </div>
+
+    <!-- MAIN APP CONTAINER -->
+    <main class="app-container">
+
+        <!-- -----------------------------------------
+             SCREEN 1: LOCK SCREEN (PIN CODE)
+        ------------------------------------------ -->
+        <section id="screen-lock" class="screen active-screen">
+            <div class="lock-card">
+                <div class="lock-header">
+                    <div class="avatar-container">
+                        <div class="avatar-glow"></div>
+                        <!-- A cute couple illustration or profile placeholder -->
+                        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?q=80&w=400&auto=format&fit=crop"
+                            alt="Us" class="avatar-img" id="lock-avatar">
+                    </div>
+                    <h2 class="lock-title">ป้อนรหัสผ่านเพื่อเปิดกล่องความทรงจำ ❤️</h2>
+                    <p class="lock-subtitle">힌ท์: วันสำคัญของเรา (ววดดปป)</p>
+                </div>
+
+                <!-- PIN dots representation -->
+                <div class="pin-dots-container" id="pin-dots-container">
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                    <span class="pin-dot"></span>
+                </div>
+
+                <div class="error-msg" id="error-msg">รหัสไม่ถูกต้อง ลองอีกครั้งนะ ❤️</div>
+
+                <!-- PIN Keyboard -->
+                <div class="keyboard-grid">
+                    <button class="key-btn" onclick="pressKey('1')">1</button>
+                    <button class="key-btn" onclick="pressKey('2')">2</button>
+                    <button class="key-btn" onclick="pressKey('3')">3</button>
+                    <button class="key-btn" onclick="pressKey('4')">4</button>
+                    <button class="key-btn" onclick="pressKey('5')">5</button>
+                    <button class="key-btn" onclick="pressKey('6')">6</button>
+                    <button class="key-btn" onclick="pressKey('7')">7</button>
+                    <button class="key-btn" onclick="pressKey('8')">8</button>
+                    <button class="key-btn" onclick="pressKey('9')">9</button>
+                    <button class="key-btn text-btn" id="btn-reset" onclick="resetPin()">รีเซ็ต</button>
+                    <button class="key-btn" onclick="pressKey('0')">0</button>
+                    <button class="key-btn text-btn" onclick="pressKey('delete')">ลบ</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- -----------------------------------------
+             SCREEN 2: WELCOME (INTRO)
+        ------------------------------------------ -->
+        <section id="screen-welcome" class="screen">
+            <div class="welcome-card fade-in">
+                <div class="polaroid-wrapper animate-float">
+                    <div class="polaroid">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=600&auto=format&fit=crop"
+                            alt="My Sweetheart" class="welcome-img" id="welcome-img">
+                        <div class="polaroid-caption" id="partner-name">น้องน้ำหวาน ❤️</div>
+                    </div>
+                </div>
+
+                <h1 class="welcome-title text-pop">สุขสันต์วันครบรอบนะคนเก่ง ❤️</h1>
+
+                <div class="welcome-message-box">
+                    <p class="welcome-text" id="welcome-msg-text">
+                        ขอบคุณที่เข้ามาเป็นส่วนหนึ่งของชีวิต<br>
+                        ทุกวันที่มีเธอคือวันที่ดีที่สุด<br>
+                        ขอให้เราจับมือกันแบบนี้ไปอีกนานแสนนานนะ
+                    </p>
+                </div>
+
+                <button class="nav-btn next-btn" onclick="goToScreen('screen-memory')">
+                    ต่อไป 👉
+                </button>
+            </div>
+        </section>
+
+        <!-- -----------------------------------------
+             SCREEN 2.5: PRE-LETTER (PHOTO & MESSAGE)
+        ------------------------------------------ -->
+        <section id="screen-pre-letter" class="screen">
+            <div class="welcome-card fade-in">
+                <div class="polaroid-wrapper animate-float">
+                    <div class="polaroid" style="transform: rotate(3deg);">
+                        <img src="" alt="Pre-letter Image" class="welcome-img" id="pre-letter-img">
+                    </div>
+                </div>
+
+                <div class="welcome-message-box">
+                    <p class="welcome-text" id="pre-letter-msg-text">
+                        <!-- Text loaded from CONFIG -->
+                    </p>
+                </div>
+
+                <div class="navigation-footer">
+                    <button class="nav-btn prev-btn" onclick="goToScreen('screen-memory')">ย้อนกลับ</button>
+                    <button class="nav-btn next-btn" onclick="goToScreen('screen-letter')">อ่านจดหมายรัก ✉️</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- -----------------------------------------
+             SCREEN 3: MEMORY GALLERY & TIMELINE
+        ------------------------------------------ -->
+        <section id="screen-memory" class="screen">
+            <div class="memory-container fade-in">
+                <h1 class="section-title">Timeline ความทรงจำ 📸</h1>
+                <p class="section-subtitle">เรื่องราวการเดินทางของเราสองคน</p>
+
+                <div class="timeline" id="timeline-container">
+                </div>
+
+                <div class="navigation-footer">
+                    <button class="nav-btn prev-btn" onclick="goToScreen('screen-welcome')">ย้อนกลับ</button>
+                    <button class="nav-btn next-btn" onclick="goToScreen('screen-pre-letter')">ต่อไป 👉</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- -----------------------------------------
+             SCREEN 4: LETTER (TYPING EFFECT)
+        ------------------------------------------ -->
+        <section id="screen-letter" class="screen">
+            <div class="letter-container fade-in">
+                <!-- Interactive Envelope -->
+                <div class="envelope-wrapper" id="envelope-wrapper" onclick="openLetter()">
+                    <div class="envelope">
+                        <div class="envelope-flap"></div>
+                        <div class="envelope-paper">
+                            <div class="paper-preview-text">คลิกเพื่อเปิดจดหมาย ✉️</div>
+                        </div>
+                        <div class="envelope-front"></div>
+                    </div>
+                </div>
+
+                <!-- Letter Paper (Visible after envelope is clicked) -->
+                <div class="opened-letter-card hidden" id="opened-letter-card">
+                    <div class="letter-paper">
+                        <h2 class="letter-header">ถึงคนที่รักที่สุด... 💌</h2>
+                        <div class="letter-body-container">
+                            <div class="letter-text" id="typing-letter-text"></div>
+                            <!-- A cursor cursor blinking effect -->
+                            <span class="typing-cursor" id="typing-cursor">|</span>
+                        </div>
+                    </div>
+
+                    <button class="nav-btn next-btn hidden" id="letter-next-btn" onclick="goToScreen('screen-final')">
+                        ไปหน้าสุดท้ายกันนะ ✨
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- -----------------------------------------
+             SCREEN 5: FINAL SURPRISE
+        ------------------------------------------ -->
+        <section id="screen-final" class="screen">
+            <div class="final-container fade-in">
+                <div class="iloveyou-wrapper animate-pulse">
+                    <h1 class="iloveyou-text">I Love You ❤️</h1>
+                </div>
+
+                <!-- Big Shiny Surprise Button -->
+                <div class="surprise-btn-wrapper" id="surprise-btn-wrapper">
+                    <button class="surprise-btn animate-bounce" onclick="triggerFinalSurprise()">
+                        🎁 กดเพื่อรับเซอร์ไพรส์ 🎁
+                    </button>
+                </div>
+
+                <!-- Surprise Reveal Card (Hidden initially) -->
+                <div class="surprise-reveal-card hidden" id="surprise-reveal-card">
+                    <div class="reveal-content animate-pop">
+                        <div class="polaroid polaroid-final animate-float">
+                            <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?q=80&w=600&auto=format&fit=crop"
+                                alt="Our love" class="final-img" id="final-img">
+                        </div>
+                        <h2 class="reveal-title">ขอบคุณที่เข้ามาในชีวิตนะ ❤️</h2>
+                        <p class="reveal-desc">อยู่เคียงข้างและสร้างความทรงจำที่แสนพิเศษร่วมกันตลอดไปนะคนเก่ง</p>
+
+                        <div class="actions-group">
+                            <button class="nav-btn restart-btn" onclick="restartLoveStory()">
+                                เริ่มใหม่อีกรอบ 🔄
+                            </button>
+                            <button class="nav-btn lock-btn" onclick="lockApp()">
+                                ล็อคหน้าจอ 🔒
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Canvas for Confetti, Fireworks and Special Heart Particles -->
+    <canvas id="surprise-canvas" class="surprise-canvas"></canvas>
+
+    <!-- Lightbox for Image Zoom in Gallery -->
+    <div class="lightbox hidden" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
+    <!-- Script File -->
+    <script src="script.js"></script>
+</body>
+
+</html>
